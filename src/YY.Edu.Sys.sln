@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YY.Edu.Sys.Test", "YY.Edu.Sys.Test\YY.Edu.Sys.Test.csproj", "{104FB80C-F82B-4E28-A817-F7EDA5F746D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YY.Edu.Sys.Api", "YY.Edu.Sys.Api\YY.Edu.Sys.Api.csproj", "{5360BA48-139C-4FB7-A9BF-F01381332815}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YY.Edu.Sys.WebForm", "YY.Edu.Sys.WebForm\YY.Edu.Sys.WebForm.csproj", "{635EBDC3-CA0F-4C20-ACF3-2C5AECFDA601}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{104FB80C-F82B-4E28-A817-F7EDA5F746D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{104FB80C-F82B-4E28-A817-F7EDA5F746D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{104FB80C-F82B-4E28-A817-F7EDA5F746D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{104FB80C-F82B-4E28-A817-F7EDA5F746D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5360BA48-139C-4FB7-A9BF-F01381332815}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5360BA48-139C-4FB7-A9BF-F01381332815}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5360BA48-139C-4FB7-A9BF-F01381332815}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5360BA48-139C-4FB7-A9BF-F01381332815}.Release|Any CPU.Build.0 = Release|Any CPU
+		{635EBDC3-CA0F-4C20-ACF3-2C5AECFDA601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{635EBDC3-CA0F-4C20-ACF3-2C5AECFDA601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{635EBDC3-CA0F-4C20-ACF3-2C5AECFDA601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{635EBDC3-CA0F-4C20-ACF3-2C5AECFDA601}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
