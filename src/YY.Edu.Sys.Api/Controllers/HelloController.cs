@@ -11,8 +11,6 @@ namespace YY.Edu.Sys.Api.Controllers
         // GET: Hello
         public ActionResult Index()
         {
-            Senparc.Weixin.MP.CommonAPIs.CommonApi.GetToken("wx03ea2f7f93b7cf96", "609bd314b63811293cec1d9adb84e699");
-
             return Content("aaaaaa");
             //return View();
         }

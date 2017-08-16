@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YY.Edu.Sys.Api", "YY.Edu.Sy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YY.Edu.Sys.WebForm", "YY.Edu.Sys.WebForm\YY.Edu.Sys.WebForm.csproj", "{635EBDC3-CA0F-4C20-ACF3-2C5AECFDA601}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YY.Edu.Sys.Admin", "YY.Edu.Sys.Admin\YY.Edu.Sys.Admin.csproj", "{D862F8F4-CFDD-442E-BC81-70A5AE3F3024}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YY.Edu.Sys.Web", "YY.Edu.Sys.Web\YY.Edu.Sys.Web.csproj", "{AF3BC0AC-410C-4532-9D8B-A0C8F90A3CF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{635EBDC3-CA0F-4C20-ACF3-2C5AECFDA601}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{635EBDC3-CA0F-4C20-ACF3-2C5AECFDA601}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{635EBDC3-CA0F-4C20-ACF3-2C5AECFDA601}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D862F8F4-CFDD-442E-BC81-70A5AE3F3024}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D862F8F4-CFDD-442E-BC81-70A5AE3F3024}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D862F8F4-CFDD-442E-BC81-70A5AE3F3024}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D862F8F4-CFDD-442E-BC81-70A5AE3F3024}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF3BC0AC-410C-4532-9D8B-A0C8F90A3CF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF3BC0AC-410C-4532-9D8B-A0C8F90A3CF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF3BC0AC-410C-4532-9D8B-A0C8F90A3CF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF3BC0AC-410C-4532-9D8B-A0C8F90A3CF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
