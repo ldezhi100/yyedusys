@@ -6,6 +6,7 @@ namespace YY.Edu.Sys.Admin.Controllers
     {
         public ActionResult Index()
         {
+            Session["venue"] = new YY.Edu.Sys.Models.Venue() { VenueID = 1 };
             return View();
         }
 

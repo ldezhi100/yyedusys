@@ -218,9 +218,19 @@ namespace YY.Edu.Sys.Admin
 
         private static void RegisterSysManage(BundleCollection bundles)
         {
+
+            bundles.Add(new ScriptBundle("~/Scripts/SysManage/ManageBase").Include(
+              "~/Scripts/SysManage/ManageBase.js"));
+
             bundles.Add(new ScriptBundle("~/Scripts/SysManage/City").Include(
                 "~/Scripts/SysManage/City.js"));
 
+            bundles.Add(new ScriptBundle("~/Scripts/SysManage/Venue").Include(
+                "~/Scripts/SysManage/Venue.js"));
+
+            bundles.Add(new ScriptBundle("~/Scripts/SysManage/Student").Include(
+              "~/Scripts/SysManage/Student.js"));
+            
             bundles.Add(new ScriptBundle("~/Scripts/SysManage/jquery.serializejson.min").Include(
                 "~/Scripts/SysManage/jquery.serializejson.min.js"));
         }

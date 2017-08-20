@@ -121,8 +121,10 @@ D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\YY.Edu.Sys.Api.dll
 D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\YY.Edu.Sys.Api.pdb
 D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\Antlr3.Runtime.dll
 D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\Dapper.dll
+D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\DapperExtensions.dll
 D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\EntityFramework.dll
 D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\EntityFramework.SqlServer.dll
+D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\log4net.dll
 D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\Microsoft.AspNet.Identity.Core.dll
 D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\Microsoft.AspNet.Identity.Owin.dll
@@ -156,7 +158,13 @@ D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\System.Web.WebPages.Deploy
 D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\System.Web.WebPages.dll
 D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\System.Web.WebPages.Razor.dll
 D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\WebGrease.dll
+D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\YY.Edu.Sys.Comm.dll
+D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\YY.Edu.Sys.Models.dll
+D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\YY.Edu.Sys.Comm.pdb
+D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\YY.Edu.Sys.Models.pdb
 D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\Dapper.xml
+D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\DapperExtensions.pdb
+D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\log4net.xml
 D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\Newtonsoft.Json.xml
 D:\junfu.zhao\project\yyedusys\src\YY.Edu.Sys.Api\bin\Senparc.Weixin.xml

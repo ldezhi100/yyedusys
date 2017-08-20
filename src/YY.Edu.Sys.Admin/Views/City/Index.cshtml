@@ -17,8 +17,9 @@
             </div>
             <form id="cityfrom" class="form-horizontal" >
                 <div class="box-body">
+                    
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-2 control-label">城市名称</label>
+                        <label for="CityName" class="col-sm-2 control-label">城市名称</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="CityName" name="CityName" placeholder="城市名称">
                         </div>
@@ -26,23 +27,52 @@
                 </div>
                 <div class="box-footer">
                     <button type="submit" class="btn btn-default">取消</button>
-                    <button type="button" class="btn btn-info pull-right" onclick="return create();">添加</button>
+                    <button type="button" class="btn btn-info pull-right" onclick="return create();">查询</button>
                 </div>
             </form>
         </div>
     </div>
+
+    <div class="col-md-12">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">查询条件</h3>
+            </div>
+            <form id="cityfrom" class="form-horizontal">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="CityID_S" class="col-sm-2 control-label">城市编号</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="CityID_S" name="CityID_S" placeholder="城市编号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="CityName_S" class="col-sm-2 control-label">城市名称</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="CityName_S" name="CityName_S" placeholder="城市名称">
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <button type="button" class="btn btn-info pull-right" onclick="return bindTable();">查询</button>
+                    <button type="submit" class="btn btn-default">取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
                 <h3 class="box-title">城市列表</h3>
             </div>
+                
             <div class="box-body" id="demo">
                 <table id="example" class="table table-bordered table-hover">
                     <thead>
                         <tr>
                             <th>编号</th>
                             <th>名称</th>
-                            <th>所属城市</th>
                         </tr>
                     </thead>
 
@@ -50,12 +80,11 @@
                         <tr>
                             <th>编号</th>
                             <th>名称</th>
-                            <th>所属城市</th>
                         </tr>
                     </tfoot>
                 </table>
             </div>
-        </div>
+            </div>
     </div>
 </div>
 

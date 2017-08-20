@@ -19,7 +19,7 @@
         <header class="main-header">
             <a href="@Url.Action("Index", "Home")" class="logo">
                 <span class="logo-mini"><b>W</b>eb</span>
-                <span class="logo-lg"><b>体育培训系统</b>场馆系统</span>
+                <span class="logo-lg">场馆系统</span>
             </a>
             <nav class="navbar navbar-static-top" role="navigation">
                 <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
@@ -256,8 +256,17 @@
                         </a>
                         <ul class="treeview-menu">
                             <li id="left-sidebar-menu-forms-general"><a href="@Url.Action("Index", "City")"><i class="fa fa-circle-o"></i> 城市管理</a></li>
-                            <li id="left-sidebar-menu-forms-advanced"><a href="@Url.Action("Advanced", "Forms")"><i class="fa fa-circle-o"></i> 校区管理</a></li>
-                            <li id="left-sidebar-menu-forms-editors"><a href="@Url.Action("Editors", "Forms")"><i class="fa fa-circle-o"></i> Editors</a></li>
+                            <li id="left-sidebar-menu-forms-advanced"><a href="@Url.Action("Index", "Campus")"><i class="fa fa-circle-o"></i> 校区管理</a></li>
+                            <li id="left-sidebar-menu-forms-editors"><a href="@Url.Action("Edit", "VenueInfo")"><i class="fa fa-circle-o"></i> 场馆设置</a></li>
+                        </ul>
+                    </li>
+                    <li id="left-sidebar-menu-forms" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-edit"></i> <span>学生管理</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li id="left-sidebar-menu-forms-general"><a href="@Url.Action("Index", "Student")"><i class="fa fa-circle-o"></i> 学生管理</a></li>
                         </ul>
                     </li>
                     <li id="left-sidebar-menu-widgets">

@@ -1,0 +1,23 @@
+dbo.Campus   --校区
+dbo.City   --城市
+dbo.ClassHoursNumber --学生课时次数表
+dbo.ClassHoursOrder --学生购买课时订单表
+dbo.Coach --教练表
+dbo.Coach_Venue --教练所属场馆表 
+dbo.CoachComment --教练课时点评表
+dbo.CoachingPresence --教师风采
+dbo.CoachWages   --教师工资发放表
+dbo.CoachWages_Sub  --发放工资明细（精确到课时）
+dbo.Curriculum     --课程表（学生、教练） 
+dbo.CurriculumEvaluate --学生课时评价
+dbo.Student    --学生
+dbo.Student_Venue --学生所属场馆
+dbo.StudentGrowth  --学生成长 
+dbo.StudentWithdrawApply - --学生申请退课
+dbo.StudentWithdrawApply_Sub --退课明细 
+dbo.TeachingProgram ---教学大纲 
+dbo.TeachingSchedule  --排课表
+dbo.Venue --场馆
+dbo.VenueInfo --场馆简介
+dbo.M_User --运营 系统用户
+dbo.MenuManage --菜单管理
