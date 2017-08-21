@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace YY.Edu.Sys.Api.Models.QueryModel
+namespace YY.Edu.Sys.Api.Models.Response
 {
-    public class StudentQuery : YY.Edu.Sys.Models.Student
+    public class StudentResponse : YY.Edu.Sys.Models.Student
     {
         public string VenueName { get; set; }
 

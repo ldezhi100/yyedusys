@@ -12,14 +12,9 @@ namespace YY.Edu.Sys.Comm.RequestModel
         public T SearchCondition { get; set; }
 
 
-        private int _start;
+        public int PageIndex { get; set; }
 
-        public int start
-        {
-            get; set;
-        }
-
-        public int length { get; set; }
+        public int PageSize { get; set; }
 
     }
 }

@@ -7,7 +7,14 @@ namespace YY.Edu.Sys.Models
 {
     public class City
     {
-        public int CityID { get; set; }
+
+        private int cityID = 0;
+
+        public int CityID
+        {
+            get { return cityID; }
+            set { cityID = value; }
+        }
 
         public string CityName { get; set; }
 

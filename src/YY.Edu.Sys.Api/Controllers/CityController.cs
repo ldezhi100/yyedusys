@@ -46,7 +46,7 @@ namespace YY.Edu.Sys.Api.Controllers
         }
 
         [HttpGet]
-        public IHttpActionResult Page()
+        public IHttpActionResult Page(string query)
         {
             try
             {
@@ -54,14 +54,16 @@ namespace YY.Edu.Sys.Api.Controllers
                 if (!ModelState.IsValid)
                     return BadRequest();
 
-                System.Web.HttpContextBase context = (System.Web.HttpContextBase)Request.Properties["MS_HttpContext"];//获取传统context
-                System.Web.HttpRequestBase request = context.Request;//定义传统request对象
-                string name = Comm.Helper.ParamHelper<string>.GetParam(request["cityName"], "");
-                int cityId = Comm.Helper.ParamHelper<int>.GetParam(request["cityId"], 0);
-                int start = Comm.Helper.ParamHelper<int>.GetParam(request["start"], 0);
-                int length = Comm.Helper.ParamHelper<int>.GetParam(request["length"], 0);
+                Comm.RequestModel.RequestModelBase<Sys.Models.City> oData = Newtonsoft.Json.JsonConvert.DeserializeObject<Comm.RequestModel.RequestModelBase<Sys.Models.City>>(query);
 
-                if (start < 0 || length <= 0)
+                //System.Web.HttpContextBase context = (System.Web.HttpContextBase)Request.Properties["MS_HttpContext"];//获取传统context
+                //System.Web.HttpRequestBase request = context.Request;//定义传统request对象
+                //string name = Comm.Helper.ParamHelper<string>.GetParam(request["cityName"], "");
+                //int cityId = Comm.Helper.ParamHelper<int>.GetParam(request["cityId"], 0);
+                //int start = Comm.Helper.ParamHelper<int>.GetParam(request["start"], 0);
+                //int length = Comm.Helper.ParamHelper<int>.GetParam(request["length"], 0);
+
+                if (oData.PageIndex < 0 || oData.PageSize <= 0)
                     return BadRequest();
 
                 IList<ISort> sort = new List<ISort>();
@@ -85,14 +87,18 @@ namespace YY.Edu.Sys.Api.Controllers
                 IEnumerable<Person> list = cn.GetList<Person>(pg);
                  */
                 IList<IPredicate> predList = new List<IPredicate>();
-                if (!string.IsNullOrWhiteSpace(name))
-                    predList.Add(Predicates.Field<YY.Edu.Sys.Models.City>(f => f.CityName, Operator.Like, "%" + name + "%"));
-                if (cityId > 0)
-                    predList.Add(Predicates.Field<YY.Edu.Sys.Models.City>(f => f.CityID, Operator.Le, cityId));
+
+                if (oData.SearchCondition != null)
+                {
+                    if (!string.IsNullOrWhiteSpace(oData.SearchCondition.CityName))
+                        predList.Add(Predicates.Field<YY.Edu.Sys.Models.City>(f => f.CityName, Operator.Like, "%" + oData.SearchCondition.CityName + "%"));
+                    if (oData.SearchCondition.CityID > 0)
+                        predList.Add(Predicates.Field<YY.Edu.Sys.Models.City>(f => f.CityID, Operator.Le, oData.SearchCondition.CityID));
+                }
 
                 IPredicateGroup predGroup = Predicates.Group(GroupOperator.And, predList.ToArray());
 
-                var result = Comm.Helper.DapperHelper.Instance.GetPage<YY.Edu.Sys.Models.City>(predGroup, sort, start, length);
+                var result = Comm.Helper.DapperHelper.Instance.GetPage<YY.Edu.Sys.Models.City>(predGroup, sort, oData.PageIndex, oData.PageSize);
                 allRowsCount = Comm.Helper.DapperHelper.Instance.Count<YY.Edu.Sys.Models.City>(predGroup);
 
                 return Ok(new Comm.ResponseModel.ResponseModel4Page<YY.Edu.Sys.Models.City>()

@@ -10,15 +10,15 @@
 @Styles.Render("~/AdminLTE/plugins/datatables/css")
 
 <div class="row">
-    <input type="hidden" id="venueId" value="@ViewBag.venueId"/>
     <div class="col-md-12">
         <div class="box box-info">
             <div class="box-header with-border">
                 <h3 class="box-title">查询条件</h3>
             </div>
-            <form id="cityfrom" class="form-horizontal">
+            <form id="studentfrom" class="form-horizontal">
                 <div class="box-body">
                     <div class="form-group">
+                        <input type="hidden" id="VenueID" name="VenueID" value="@ViewBag.venueId" />
                         <label for="FullName" class="col-sm-2 control-label">学生姓名</label>
                         <div class="col-sm-2">
                             <input type="text" class="form-control" id="FullName" name="FullName" placeholder="学生姓名">

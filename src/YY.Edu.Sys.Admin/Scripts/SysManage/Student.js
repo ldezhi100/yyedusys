@@ -1,7 +1,4 @@
-﻿function get_query() {
-    return { "venueId": $("#venueId").val(), "FullName": $("#FullName").val(), "ParentMobile": $("#ParentMobile").val(), "ParentFullName": $("#ParentFullName").val() };
-}
-
+﻿
 function bind_data() {
 
     columns_data = [
@@ -23,7 +20,7 @@ function bind_data() {
         { "data": "Address" },
     ];
 
-    bindTable('studenttable',columns_data, 'api/student/Page4Venue', get_query());
+    bindTable('studenttable', 'studentfrom', 'api/student/Page4Venue', columns_data);
 }
 
 $(function () {
