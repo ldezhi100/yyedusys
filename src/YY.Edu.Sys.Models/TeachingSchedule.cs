@@ -24,10 +24,26 @@ namespace YY.Edu.Sys.Models
 		private int? _state=1;
 		private int? _pktype=1;
 		private string _info;
-		/// <summary>
-		/// 
-		/// </summary>
-		public int PKID
+        /// <summary>
+        /// 
+        /// </summary>
+        /// 
+
+        private string _venueName;
+        private string _campusName;
+
+        public string VenueName
+        {
+            set { _venueName = value; }
+            get { return _venueName; }
+        }
+
+        public string CampusName
+        {
+            set { _campusName = value; }
+            get { return _campusName; }
+        }
+        public int PKID
 		{
 			set{ _pkid=value;}
 			get{return _pkid;}

@@ -53,6 +53,7 @@
     <Compile Include="Coach_Venue.cs" />
     <Compile Include="Curriculum.cs" />
     <Compile Include="CurriculumEvaluate.cs" />
+    <Compile Include="CurriculumStudentQuery.cs" />
     <Compile Include="MenuManage.cs" />
     <Compile Include="M_User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

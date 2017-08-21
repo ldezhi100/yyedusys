@@ -29,5 +29,7 @@ namespace YY.Edu.Sys.Api.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<YY.Edu.Sys.Models.Coach> Coaches { get; set; }
     }
 }

@@ -16,10 +16,20 @@ namespace YY.Edu.Sys.Models
 		private decimal? _price;
 		private string _remark;
 		private int? _venueid;
-		/// <summary>
-		/// 
-		/// </summary>
-		public int WagesID
+
+        private string _venueName;
+        /// <summary>
+        /// 场馆名称
+        /// </summary>
+        public string VenueName
+        {
+            set { _venueName = value; }
+            get { return _venueName; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public int WagesID
 		{
 			set{ _wagesid=value;}
 			get{return _wagesid;}
