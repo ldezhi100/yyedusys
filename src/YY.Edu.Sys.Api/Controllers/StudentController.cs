@@ -8,6 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using YY.Edu.Sys.Comm.Helper;
+using System.Text;
 
 namespace YY.Edu.Sys.Api.Controllers
 {
@@ -166,5 +167,121 @@ namespace YY.Edu.Sys.Api.Controllers
         {
 
         }
+
+
+
+
+        #region 我的成长
+        #region //
+
+        [HttpGet]
+        // GET api/<controller>
+        public IHttpActionResult GetStudentGrowth()
+        {
+
+            try
+            {
+
+                if (!ModelState.IsValid)
+                    return BadRequest();
+
+                System.Web.HttpContextBase context = (System.Web.HttpContextBase)Request.Properties["MS_HttpContext"];//获取传统context
+                System.Web.HttpRequestBase request = context.Request;//定义传统request对象
+                string UserName = Comm.Helper.ParamHelper<string>.GetParam(request["UserName"], "");
+                string ParentMobile = Comm.Helper.ParamHelper<string>.GetParam(request["ParentMobile"], "");
+                string FullName = Comm.Helper.ParamHelper<string>.GetParam(request["FullName"], "");
+                string ParentFullName = Comm.Helper.ParamHelper<string>.GetParam(request["ParentFullName"], "");
+                int start = Comm.Helper.ParamHelper<int>.GetParam(request["start"], 0);
+                start += 1;//adminlte 加载的datatable起始页为0
+                int length = Comm.Helper.ParamHelper<int>.GetParam(request["length"], 0);
+                int StudentID = Comm.Helper.ParamHelper<int>.GetParam(request["studentID"], 0);
+
+                if (StudentID <= 0 || start < 0 || length <= 0)
+                    return BadRequest();
+
+                PageCriteria criteria = new PageCriteria();              
+
+                criteria.Condition += string.Format("  StudentID= {0}", StudentID);
+
+             
+                criteria.CurrentPage = start;
+                criteria.Fields = "*";
+                criteria.PageSize = length;
+                criteria.TableName = "StudentGrowth";
+                criteria.PrimaryKey = "GrowthID";
+
+                var r = Comm.Helper.DapperHelper.GetPageData<YY.Edu.Sys.Models.StudentGrowth>(criteria);
+
+                return Ok(new Comm.ResponseModel.ResponseModel4Page<YY.Edu.Sys.Models.StudentGrowth>()
+                {
+                    data = r.Items,
+                    recordsFiltered = r.TotalNum,
+                    recordsTotal = r.TotalNum,
+                });
+
+            }
+            catch (Exception ex)
+            {
+                logs.Error("学生成长查询失败", ex);
+                return BadRequest();
+            }         
+        }
+
+        [HttpPost]
+        public IHttpActionResult AddStudentGrowth(YY.Edu.Sys.Models.StudentGrowth cp)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            try
+            {
+
+                var result = Comm.Helper.DapperHelper.Instance.Insert(cp);
+
+                if (result > 0)
+                {
+                    return Ok(Comm.ResponseModel.ResponseModelBase.Success());
+                }
+                else
+                {
+                    return Content(HttpStatusCode.OK, Comm.ResponseModel.ResponseModelBase.GetRes(Comm.ResponseModel.ResponseModelErrorEnum.SystemError));
+                }
+
+            }
+            catch (Exception ex)
+            {
+                logs.Error("学生成长信息添加失败", ex);
+                return BadRequest();
+            }
+        }
+
+        [HttpPost]
+        public IHttpActionResult DelStudentGrowth(int ID, int State)
+        {
+            string sql = "update StudentGrowth set FCState=@FCState where GrowthID=@GrowthID";
+
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            //单条添加
+            var result = Comm.Helper.DapperHelper.Instance.Execute(sql.ToString(),
+                                   new { FCState = State, GrowthID = ID });
+
+            if (result > 0)
+            {
+                return Ok(new { error = false, code = "1000", message = "操作成功" });
+            }
+            else
+            {
+                return Content(HttpStatusCode.OK, new { error = true, code = "1001", message = "操作失败,请重新操作" });
+            }
+        }
+
+        #endregion
+
+        #endregion
+
+
+
     }
 }
