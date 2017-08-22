@@ -135,9 +135,9 @@ namespace YY.Edu.Sys.Api.Controllers
                 criteria.TableName = "Student as s join Student_Venue as sv on s.StudentID=sv.StudentID join Venue as v on sv.VenueID=v.VenueID";
                 criteria.PrimaryKey = "s.StudentID";
 
-                var r = Comm.Helper.DapperHelper.GetPageData<Models.QueryModel.StudentQuery>(criteria);
+                var r = Comm.Helper.DapperHelper.GetPageData<YY.Edu.Sys.Api.Models.Response.StudentResponse>(criteria);
 
-                return Ok(new Comm.ResponseModel.ResponseModel4Page<Models.QueryModel.StudentQuery>()
+                return Ok(new Comm.ResponseModel.ResponseModel4Page<YY.Edu.Sys.Api.Models.Response.StudentResponse>()
                 {
                     data = r.Items,
                     recordsFiltered = r.TotalNum,
@@ -495,7 +495,7 @@ namespace YY.Edu.Sys.Api.Controllers
             StringBuilder sql = new StringBuilder();
             sql.Append("declare @id int;INSERT INTO[StudentWithdrawApply]([StudentID],[KSNumber],[Remark],[RefundablePrice],[RealRetreat]           values(@StudentID, @KSNumber, @Remark, @RefundablePrice, @RealRetreat)");
             sql.Append("   set @id=@@IDENTITY; ");
-            List<YY.Edu.Sys.Models.StudentWithdrawApply_Sub> list = cp.sublisst;
+            List<YY.Edu.Sys.Models.StudentWithdrawApply_Sub> list = cp;
             foreach (YY.Edu.Sys.Models.StudentWithdrawApply_Sub s in list)
             {
                 sql.Append(" INSERT INTO [StudentWithdrawApply_Sub]([CoachID],[ClassNumber],[Price],[ApplyID])  values('"+s.CoachID+"', '"+s.ClassNumber+"','"+s.Price+"', @id) ");

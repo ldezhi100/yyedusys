@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace YY.Edu.Sys.Models
 {
 	/// <summary>
@@ -55,8 +57,9 @@ namespace YY.Edu.Sys.Models
 			set{ _applyid=value;}
 			get{return _applyid;}
 		}
-		#endregion Model
 
-	}
+        #endregion Model
+
+    }
 }
 

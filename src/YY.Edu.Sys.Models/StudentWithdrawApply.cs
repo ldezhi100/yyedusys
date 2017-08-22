@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace YY.Edu.Sys.Models
 {
 	/// <summary>
@@ -100,8 +102,11 @@ namespace YY.Edu.Sys.Models
 			set{ _orderid=value;}
 			get{return _orderid;}
 		}
-		#endregion Model
 
-	}
+
+        public List<StudentWithdrawApply_Sub> sublisst { get; set; }
+        #endregion Model
+
+    }
 }
 
