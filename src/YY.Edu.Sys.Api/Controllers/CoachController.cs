@@ -287,8 +287,9 @@ namespace YY.Edu.Sys.Api.Controllers
             return Ok(query);        
         }
 
+
         /// <summary>
-        ///课程表 学生进行签到（由教练发起）
+        ///课程表 学生进行签到（由教练发起）df
         /// </summary>
         /// <param name="State"></param>
         /// <param name="StudentID"></param>
