@@ -8,6 +8,8 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Web.Http;
+using YY.Edu.Sys.Api.Models.Response;
+using YY.Edu.Sys.Api.Models.ResponseModel;
 using YY.Edu.Sys.Comm.Helper;
 
 
@@ -254,9 +256,9 @@ namespace YY.Edu.Sys.Api.Controllers
                 criteria.TableName = " TeachingSchedule t with(nolock) inner join Venue v with(nolock) on t.VenueID = v.VenueID             left join Campus c with(nolock) on t.CampusID = t.CampusID  where PKID in(select PKID from Curriculum c with(nolock) where CoachID = '"+CoachID+"' )";
                 criteria.PrimaryKey = "PKID";
 
-                var r = Comm.Helper.DapperHelper.GetPageData<YY.Edu.Sys.Models.TeachingSchedule>(criteria);
+                var r = Comm.Helper.DapperHelper.GetPageData<TeachingScheduleResponse>(criteria);
 
-                return Ok(new Comm.ResponseModel.ResponseModel4Page<YY.Edu.Sys.Models.TeachingSchedule>()
+                return Ok(new Comm.ResponseModel.ResponseModel4Page<TeachingScheduleResponse>()
                 {
                     data = r.Items,
                     recordsFiltered = r.TotalNum,
@@ -281,7 +283,7 @@ namespace YY.Edu.Sys.Api.Controllers
         {
 
             string sql = "select c.CurriculumID,s.FullName,s.Mobile,s.ParentFullName,s.ParentMobile from Curriculum c with(nolock) inner join Student s with(nolock) on c.StudentID=s.StudentID  where PKID=@PKID ";
-            var query = Comm.Helper.DapperHelper.Instance.Query<YY.Edu.Sys.Models.CurriculumStudentQuery>(sql, new { PKID = pkid });
+            var query = Comm.Helper.DapperHelper.Instance.Query<StudentCurriculumResponse>(sql, new { PKID = pkid });
             return Ok(query);        
         }
 

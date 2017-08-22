@@ -56,3 +56,4 @@ E:\MYProject\yyedusys\src\YY.Edu.Sys.Test\bin\Debug\Senparc.Weixin.MP.xml
 E:\MYProject\yyedusys\src\YY.Edu.Sys.Test\bin\Debug\zh-Hans\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
 E:\MYProject\yyedusys\src\YY.Edu.Sys.Test\obj\Debug\YY.Edu.Sys.Test.dll
 E:\MYProject\yyedusys\src\YY.Edu.Sys.Test\obj\Debug\YY.Edu.Sys.Test.pdb
+E:\MYProject\yyedusys\src\YY.Edu.Sys.Test\obj\Debug\YY.Edu.Sys.Test.csprojResolveAssemblyReference.cache

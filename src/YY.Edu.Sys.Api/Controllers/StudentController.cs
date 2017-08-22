@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using YY.Edu.Sys.Comm.Helper;
 using System.Text;
+using YY.Edu.Sys.Api.Models.ResponseModel;
 
 namespace YY.Edu.Sys.Api.Controllers
 {
@@ -328,9 +329,9 @@ namespace YY.Edu.Sys.Api.Controllers
                 criteria.TableName = "TeachingSchedule t with(nolock) inner join Venue v with(nolock) on t.VenueID = v.VenueID left join Campus c with(nolock) on t.CampusID = t.CampusID inner join Curriculum cu with(nolock) on t.PKID = cu.PKID";
                 criteria.PrimaryKey = "PKID";
 
-                var r = Comm.Helper.DapperHelper.GetPageData<YY.Edu.Sys.Models.TeachingSchedule>(criteria);
+                var r = Comm.Helper.DapperHelper.GetPageData<Models.Response.TeachingScheduleResponse>(criteria);
 
-                return Ok(new Comm.ResponseModel.ResponseModel4Page<YY.Edu.Sys.Models.TeachingSchedule>()
+                return Ok(new Comm.ResponseModel.ResponseModel4Page<Models.Response.TeachingScheduleResponse>()
                 {
                     data = r.Items,
                     recordsFiltered = r.TotalNum,
@@ -406,7 +407,7 @@ namespace YY.Edu.Sys.Api.Controllers
         /// <returns></returns>
         public IHttpActionResult GetBuyBuyCurriculumDetail(int StudentID)
         {
-            var query = Comm.Helper.DapperHelper.Instance.Query<YY.Edu.Sys.Models.ClassHoursOrder>("select o.*,'CoachFullName'=c.FullName from  ClassHoursOrder o with(nolock) inner join Coach c with(nolock) on o.CoachID=c.CoachID order by OrderID desc ");
+            var query = Comm.Helper.DapperHelper.Instance.Query<ClassHoursOrderResponse>("select o.*,'CoachFullName'=c.FullName from  ClassHoursOrder o with(nolock) inner join Coach c with(nolock) on o.CoachID=c.CoachID order by OrderID desc ");
 
             //链表直接写sql传参
 
@@ -495,7 +496,7 @@ namespace YY.Edu.Sys.Api.Controllers
             StringBuilder sql = new StringBuilder();
             sql.Append("declare @id int;INSERT INTO[StudentWithdrawApply]([StudentID],[KSNumber],[Remark],[RefundablePrice],[RealRetreat]           values(@StudentID, @KSNumber, @Remark, @RefundablePrice, @RealRetreat)");
             sql.Append("   set @id=@@IDENTITY; ");
-            List<YY.Edu.Sys.Models.StudentWithdrawApply_Sub> list = cp;
+            List<YY.Edu.Sys.Models.StudentWithdrawApply_Sub> list = cp.sublisst;
             foreach (YY.Edu.Sys.Models.StudentWithdrawApply_Sub s in list)
             {
                 sql.Append(" INSERT INTO [StudentWithdrawApply_Sub]([CoachID],[ClassNumber],[Price],[ApplyID])  values('"+s.CoachID+"', '"+s.ClassNumber+"','"+s.Price+"', @id) ");
