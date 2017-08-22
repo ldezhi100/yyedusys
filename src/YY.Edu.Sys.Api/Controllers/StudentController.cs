@@ -414,7 +414,7 @@ namespace YY.Edu.Sys.Api.Controllers
             return Ok(query);
         }
         /// <summary>
-        /// 预约课时
+        /// 预约课时d
         /// </summary>
         /// <param name="c"></param>
         /// <returns></returns>
